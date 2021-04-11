@@ -29,6 +29,7 @@ func main() {
 	api := router.Group("/api/v1/")
 
 	api.POST("/user", userHandler.RegisterUser)
+	api.POST("/sessions", userHandler.Login)
 	router.Run()
 
 	// userInput := user.RegisterUserInput{}
@@ -69,17 +70,3 @@ func main() {
 	// router.Run()
 
 }
-
-// func handler(c *gin.Context) {
-
-// 	dsn := "root:@tcp(127.0.0.1:3306)/startup?charset=utf8mb4&parseTime=True&loc=Local"
-// 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
-
-// 	if err != nil {
-// 		log.Fatal(err.Error())
-// 	}
-// 	var users []user.User
-// 	db.Find(&users)
-// 	c.JSON(http.StatusOK, users)
-
-// }
