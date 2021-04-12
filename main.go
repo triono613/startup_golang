@@ -30,6 +30,7 @@ func main() {
 
 	api.POST("/user", userHandler.RegisterUser)
 	api.POST("/sessions", userHandler.Login)
+	api.POST("/email_cheker", userHandler.CheckEmailAvailability)
 	router.Run()
 
 	// userInput := user.RegisterUserInput{}
